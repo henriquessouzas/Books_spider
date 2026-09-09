@@ -33,4 +33,6 @@ class BooksSpider(scrapy.Spider):
             with open('books.json', 'w', encoding='utf-8') as f:
                 json.dump(self.books_list, f, ensure_ascii=False, indent=4)
 
-
+process = CrawlerProcess()
+process.crawl(BooksSpider)
+process.start()
